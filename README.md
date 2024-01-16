@@ -1,48 +1,45 @@
-Next.js Commerce
-A Next.js ^13.4.19
+# Next.js Starter Kit
+Boilerplate to quckly get up and running with Next.js with
+- __Typescript__ as the language choice
+- __Tailwind CSS__ for quick styling without getting out of your HTML
+- __ESLint__ for static code analysis
+- __Prettier__ for code formatting
+- __SEO__ pre-configured
+- __Icons & SVG__ support out of the box
 
-Next.js App Router
-Optimized for SEO using Next.js's Metadata
-React Server Components (RSCs) and Suspense
-Server Actions for mutations
-Edge Runtime
-New fetching and caching paradigms
-Dynamic OG images
-Styling with Tailwind CSS
-Note
+and pre-made
+- __Message/Alerts__ `coz who don't uses one?
+- __Authentication system with Supabase__ In the [with-supabase](https://github.com/one-aalam/next-starter-kit/tree/auth-supabase) branch
 
-Important Feature
+## Getting Started
 
-Pagination
-Fetch product by query
-Automatic light/dark mode based on system settings
-Checkout and payments with stripe
-Running locally
-You will need to use the environment variables defined in .env.example to run Next.js Commerce. It's recommended you use Vercel Environment Variables for this, but a .env file is all that is necessary.
+First, run the development server:
 
-npm install
-
+```bash
 npm run dev
+# or
+yarn dev
+```
 
-How to use tokens?
-Using permanent token:
-// install client: yarn add boundless-api-client
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-import {BoundlessClient} from 'boundless-api-client';
-const apiClient = new BoundlessClient('<YOUR PERMANENT TOKEN>');
-apiClient.setInstanceId('<YOUR INSTANCE ID>');
+You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-//fetch products:
-apiClient.catalog.getProducts().then(data => console.log(data));
-Generate token (for server-side requests - more secure way):
-// install client: yarn add boundless-api-client jsonwebtoken
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `src/pages/api/hello.ts`.
 
-import {BoundlessClient} from 'boundless-api-client';
-import {generateBoundlessToken} from 'boundless-api-client/token';
+The `src/pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-const token = generateBoundlessToken('<YOUR CLIENT ID>', '<YOUR SECRET>', '<YOUR INSTANCE ID>');
-const apiClient = new BoundlessClient(token);
-apiClient.setInstanceId('<YOUR INSTANCE ID>');
+## Learn More
 
-//fetch products:
-apiClient.catalog.getProducts().then(data => console.log(data));
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
